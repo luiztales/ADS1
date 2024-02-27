@@ -1,0 +1,133 @@
+/* Reset CSS: Remove margens e preenchimentos padrões, define box-sizing para border-box para incluir padding e border no cálculo da largura/altura dos elementos, e define a fonte padrão seerif*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* Define o layout principal do body para flex, centraliza seu conteúdo horizontal e verticalmente*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: -webkit-linear-gradient(to right, #272727, #000000); /* Para Chrome 10-25,*/
+    background: linear-gradient( to right, #202020, #000000);
+    width: 100%;
+    overflow: hidden;
+}
+/*Define a posição,tamanho e alinhamento do container pricnipal*/
+.container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estiliza os spams dentro do .container, posicionando-os absolutamente para cobrir todo o container*/
+.container span{
+    position:absolute;
+    inset: 0;
+    border: 2px solid #fff;
+    transition: 0,3s;
+}
+/* Personaliza a forma dos spans usando border-radius para criar formas únicas e aplica animações*/
+.container span:nth-child(1) {
+    border-radius: 42% 65% 63% 33% / 39% 44% 56% 59%;
+    animation: animate 3s linear infinite;
+}
+.container span:nth-child(2) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate 10s linear infinite;
+}
+.container span:nth-child(3) {
+    border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+    animation: animate2 0.5s linear infinite;
+}
+
+/* Aumenta a espessura da borda e aplica um sombreado quando o .container é passado por cima*/
+.container:hover span {
+    border: 6px solid var(--clr);
+    filter: drop-shadow(0 0 20px var(--clr));
+}
+/* Define as keyframes para animações dos spans, rotacionando-os 360 graus */
+@keyframes animate {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);}
+    100% {
+        transform: rotate(0deg);
+    }
+}
+/* Estiliza o .form-container para alinhar e organizar os elementos do formulário de login*/
+.form-container {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+/* Define o estilo do título do formulário*/
+.form-container h2 {
+    font-size: 2em;
+    color: #fff;
+}
+/* Estiliza o .input-container para alinhar os campos de entrada */
+.input-container {
+    position: relative;
+    width: 100%;
+}
+/* Estiliza os campos de entrada para preencher o .input-container, com estilo transparente*/
+.input-container input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Remove a borda de foco padrão dos campos de entrada para manter a estética*/
+.input-container input:focus {
+    outline: none;
+    border-color: #fff;
+}
+/* Peersonaliza o botão de envio com um gradiente de cor e remove a borda*/
+.input-container input[type="submit"] {
+    width: 100%;
+    background: #0078ff;
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estiliza o .link-container para organizar os links de ação*/
+.link-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.limk-container a {
+    color: #ffffff;
+    text-decoration: none;
+}
